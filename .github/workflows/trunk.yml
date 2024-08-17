@@ -24,12 +24,12 @@ jobs:
     - uses: actions/cache@v4
       with:
         path: ~/.cargo/bin
-        key: cargo-bin-${{ hashFiles('.github/workflows/release.yml') }}
+        key: cargo-bin-${{ hashFiles('.github/workflows/trunk.yml') }}
     - uses: cargo-bins/cargo-binstall@main
     - name: Installing WASM toolchain and Trunk
       run: |
         rustup target add wasm32-unknown-unknown
-        cargo binstall trunk
+        cargo binstall -y trunk
     - name: Build app
       run: trunk build --release --locked
     - uses: actions/upload-pages-artifact@v3
