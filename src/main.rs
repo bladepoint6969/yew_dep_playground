@@ -1,7 +1,6 @@
-use serde::Deserialize;
 use yew::prelude::*;
 
-#[derive(PartialEq, Clone, Deserialize)]
+#[derive(PartialEq, Clone)]
 struct Video {
     id: usize,
     title: String,

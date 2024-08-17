@@ -32,6 +32,8 @@ jobs:
         cargo binstall -y trunk
     - name: Build app
       run: trunk build --release --locked
+    - name: List contents
+      run: ls -l
     - uses: actions/upload-pages-artifact@v3
       with:
         path: /dist
