@@ -1,0 +1,10 @@
+[package]
+name = "yew_dep_playground"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+gloo-net = "0.6.0"
+serde = { version = "1.0.208", features = ["derive"] }
+wasm-bindgen-futures = "0.4.43"
+yew = { version = "0.21.0", features = ["csr"] }
