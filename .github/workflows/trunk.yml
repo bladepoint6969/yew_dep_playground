@@ -31,7 +31,7 @@ jobs:
         rustup target add wasm32-unknown-unknown
         cargo binstall -y trunk
     - name: Build app
-      run: trunk build --release --locked
+      run: trunk build --release --locked --config Trunk_gh.toml
     - name: List contents
       run: ls -l dist
     - uses: actions/upload-pages-artifact@v3
