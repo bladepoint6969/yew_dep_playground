@@ -3,8 +3,6 @@ name: Trunk Deploy
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
 env:
   CARGO_TERM_COLOR: always
@@ -31,7 +29,7 @@ jobs:
         rustup target add wasm32-unknown-unknown
         cargo binstall -y trunk
     - name: Build app
-      run: trunk build --release --locked --config Trunk_gh.toml
+      run: trunk build --release --locked --public-url /${{ github.event.repository.name }}
     - name: List contents
       run: ls -l dist
     - uses: actions/upload-pages-artifact@v3
